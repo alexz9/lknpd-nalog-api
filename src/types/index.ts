@@ -10,7 +10,7 @@ interface INalogApiError{
 }
 
 export interface IServiceIncome {
-  name: string,
+  name: string
   amount: number | string // 00.00 | 00 | "00.00" | "00"
   quantity: number // в чеке не отображается
 }
@@ -24,22 +24,22 @@ export interface INalogAuthResponse extends INalogApiError{
 }
 
 export interface INalogAddIncomeResponse extends INalogApiError{
-  approvedReceiptUuid: string,
+  approvedReceiptUuid: string
 }
 
 export interface INalogCancelIncomeResponse extends INalogApiError{
   incomeInfo: {
-    approvedReceiptUuid: string,
-    name: string,
-    operationTime: Date,
-    requestTime: Date,
-    paymentType: "CASH",
-    partnerCode: null,
-    totalAmount: number,
+    approvedReceiptUuid: string
+    name: string
+    operationTime: Date
+    requestTime: Date
+    paymentType: "CASH"
+    partnerCode: null
+    totalAmount: number
     cancellationInfo: {
-      operationTime: Date,
-      registerTime: Date,
-      taxPeriodId: number,
+      operationTime: Date
+      registerTime: Date
+      taxPeriodId: number
       comment: string
     },
     sourceDeviceId: string
