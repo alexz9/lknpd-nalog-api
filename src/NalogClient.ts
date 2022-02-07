@@ -63,8 +63,7 @@ abstract class NalogClient {
     this.#auth(response);
   }
 
-  #auth(response: INalogAuthResponse) {
-    console.log(response);
+  #auth(response: INalogAuthResponse) {    
     if (!response.refreshToken) {
       throw new Error(response.message || "Authorization failed");
     }
