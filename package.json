@@ -1,0 +1,32 @@
+{
+  "name": "lknpd-nalog-api",
+  "version": "1.0.0",
+  "description": "Non-public api for site lknpd.nalog.ru",
+  "author": "alex.z-9@ya.ru",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexz9/lknpd-nalog-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexz9/lknpd-nalog-api.git/issues"
+  },
+  "scripts": {
+    "build": "tsc",    
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.12",
+    "typescript": "^4.5.3"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "cross-fetch": "^3.1.5"
+  }
+}
