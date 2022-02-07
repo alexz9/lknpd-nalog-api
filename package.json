@@ -12,11 +12,13 @@
   "bugs": {
     "url": "https://github.com/alexz9/lknpd-nalog-api.git/issues"
   },
+  "homepage": "https://github.com/alexz9/lknpd-nalog-api#readme",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["nalog api", "moy nalog", "самозанятый api"],
   "devDependencies": {
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.12",
