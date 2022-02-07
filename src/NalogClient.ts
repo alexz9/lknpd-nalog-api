@@ -6,6 +6,7 @@ import isExpiredToken from "./utils/isExpiredToken";
 import isValidPhone from "./utils/isValidPhone";
 
 abstract class NalogClient {
+  static #instance: NalogClient;
   #apiUrl = "https://lknpd.nalog.ru/api/v1";
   #fetchParams: RequestInit = {
     method: "POST",
@@ -27,9 +28,12 @@ abstract class NalogClient {
   #token = "";
   #tokenExpireIn = "";
   #refreshToken = "";
-  #authPromise: Promise<any>;
+  #authPromise;
 
   constructor({ inn, password, phone }: INalogApiInitParams) {    
+    if(NalogClient.#instance){     
+      return NalogClient.#instance;
+    }
     if (phone && !isValidPhone(phone)) {
       throw new Error("Phone number entered incorrectly. Enter by pattern 79101112222");
     }
@@ -37,7 +41,8 @@ abstract class NalogClient {
       throw new Error("Login and password or phone are required for authorization");
     }
     this.#deviceInfo.sourceDeviceId = createDeviceId();
-    this.#authPromise = phone ? this.#authPhone(phone) : this.#authPassword(inn, password);
+    this.#authPromise = phone ? this.#authPhone(phone) : this.#authPassword(inn, password);   
+    NalogClient.#instance = this;
   }
 
   async #authPassword(username?: string | number, password?: string) {

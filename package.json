@@ -13,7 +13,7 @@
     "url": "https://github.com/alexz9/lknpd-nalog-api.git/issues"
   },
   "scripts": {
-    "build": "tsc",    
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
