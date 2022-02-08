@@ -67,6 +67,7 @@ abstract class NalogClient {
     if (!response.refreshToken) {
       throw new Error(response.message || "Authorization failed");
     }
+    console.log("Authorization in lknpd.nalog.ru was successful");
     this.#inn = response.profile.inn;
     this.#token = response.token;
     this.#tokenExpireIn = response.tokenExpireIn;
